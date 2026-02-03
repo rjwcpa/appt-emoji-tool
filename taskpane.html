@@ -1,103 +1,62 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
     <meta charset="UTF-8" />
-
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-
     <title>Emoji Selector</title>
-
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-
     <style>
-
         body { font-family: 'Segoe UI', sans-serif; padding: 20px; background-color: #faf9f8; }
-
         .header { font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #323130; }
-
         .button-grid { display: grid; gap: 12px; }
-
         .emoji-btn {
-
             cursor: pointer;
-
             background: white;
-
             border: 1px solid #edebe9;
-
             border-radius: 4px;
-
             padding: 12px;
-
             font-size: 20px;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-
             transition: all 0.2s ease;
-
+            width: 100%; /* Ensures button fills grid */
         }
-
         .emoji-btn:hover { background: #f3f2f1; border-color: #0078d4; transform: translateY(-1px); }
-
         .emoji-btn span { margin-left: 10px; font-size: 14px; color: #605e5c; }
-
     </style>
-
 </head>
-
 <body>
-
     <div class="header">Select Icon</div>
-
     <div class="button-grid">
-
         <button class="emoji-btn" onclick="addEmoji('🔐')">🔐 <span>Secure</span></button>
-
         <button class="emoji-btn" onclick="addEmoji('📧')">📧 <span>Email</span></button>
-
         <button class="emoji-btn" onclick="addEmoji('📦')">📦 <span>Package</span></button>
-
     </div>
 
-
-
     <script>
-
         Office.onReady();
 
-
-
         function addEmoji(emoji) {
-
-            // This script targets the Subject line of the appointment
-
             Office.context.mailbox.item.subject.getAsync((result) => {
-
                 if (result.status === Office.AsyncResultStatus.Succeeded) {
-
-                    const currentSubject = result.value;
-
-                    // Prepend the emoji to the subject
-
-                    Office.context.mailbox.item.subject.setAsync(emoji + " " + currentSubject);
-
+                    let currentSubject = result.value;
+                    
+                    // Check if subject already starts with this emoji to prevent duplicates
+                    if (!currentSubject.startsWith(emoji)) {
+                        const newSubject = emoji + " " + currentSubject;
+                        Office.context.mailbox.item.subject.setAsync(newSubject, (setResult) => {
+                            if (setResult.status === Office.AsyncResultStatus.Failed) {
+                                console.error("Error setting subject: " + setResult.error.message);
+                            }
+                        });
+                    }
+                } else {
+                    console.error("Error getting subject: " + result.error.message);
                 }
-
             });
-
         }
-
     </script>
-
 </body>
-
 </html>
