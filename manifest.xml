@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
            xsi:type="MailApp">
-  <Id>5e8b4110-3333-4444-a716-44665544b111</Id>
+  <Id>d2f16e4a-5555-4444-a716-44665544c333</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Internal Tools</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Meeting Icons" />
-  <Description DefaultValue="Quickly add 🔐, 📧, or 📦 to your subject." />
+  <Description DefaultValue="Add 🔐, 📧, or 📦 to your subject line." />
   <Hosts>
     <Host Name="Mail" />
   </Hosts>
@@ -56,12 +56,12 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="icon16" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/icon16.png" />
-        <bt:Image id="icon32" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/icon32.png" />
-        <bt:Image id="icon80" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/icon80.png" />
+        <bt:Image id="icon16" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/icon16.png"/>
+        <bt:Image id="icon32" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/icon32.png"/>
+        <bt:Image id="icon80" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/icon80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="taskpaneUrl" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/taskpane.html" />
+        <bt:Url id="taskpaneUrl" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Custom Tools" />
