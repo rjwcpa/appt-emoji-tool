@@ -5,7 +5,7 @@
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
            xsi:type="MailApp">
   <Id>a1b2c3d4-e5f6-4789-9abc-def012345678</Id>
-  <Version>1.0.0.10</Version>
+  <Version>1.0.0.11</Version>
   <ProviderName>Internal Tools</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Meeting Icons" />
@@ -64,8 +64,22 @@
             </OfficeTab>
           </ExtensionPoint>
         </DesktopFormFactor>
+
+        <MobileFormFactor>
+          <FunctionFile resid="taskpaneUrl" />
+          <ExtensionPoint xsi:type="MobileAppointmentOrganizerCommandSurface">
+            <Control xsi:type="MobileButton" id="btnEmojiPickerMobile">
+              <Label resid="buttonLabel" />
+              <Icon resid="icon32" />
+              <Action xsi:type="ShowTaskpane">
+                <SourceLocation resid="taskpaneUrl" />
+              </Action>
+            </Control>
+          </ExtensionPoint>
+        </MobileFormFactor>
       </Host>
     </Hosts>
+
     <Resources>
       <bt:Images>
         <bt:Image id="icon16" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/icon16.png"/>
