@@ -4,12 +4,14 @@
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
            xsi:type="MailApp">
-  <Id>9d3c5221-1111-2222-b827-99887766a555</Id>
-  <Version>1.0.0.7</Version>
+  <Id>a1b2c3d4-e5f6-4789-9abc-def012345678</Id>
+  <Version>1.0.0.10</Version>
   <ProviderName>Internal Tools</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Meeting Icons" />
   <Description DefaultValue="Add 🔐, 📧, or 📦 to your subject line." />
+  
+  <SupportUrl DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/" />
   
   <Hosts>
     <Host Name="Mail" />
@@ -30,6 +32,10 @@
   </FormSettings>
 
   <Permissions>ReadWriteItem</Permissions>
+
+  <Rule xsi:type="RuleCollection" Mode="And">
+    <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit" />
+  </Rule>
 
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
