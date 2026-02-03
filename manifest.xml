@@ -5,7 +5,7 @@
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
            xsi:type="MailApp">
   <Id>a1b2c3d4-e5f6-4789-9abc-def012345678</Id>
-  <Version>1.0.0.15</Version>
+  <Version>1.0.0.16</Version>
   <ProviderName>Internal Tools</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Meeting Icons" />
@@ -17,12 +17,6 @@
     <Host Name="Mail" />
   </Hosts>
 
-  <Requirements>
-    <Sets>
-      <Set Name="Mailbox" MinVersion="1.1" />
-    </Sets>
-  </Requirements>
-
   <FormSettings>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
@@ -33,15 +27,42 @@
 
   <Permissions>ReadWriteItem</Permissions>
 
+  <Rule xsi:type="RuleCollection" Mode="And">
+    <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit" />
+  </Rule>
+
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="VersionOverridesV1_0">
     <Hosts>
       <Host xsi:type="MailHost">
         <DesktopFormFactor>
           <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
             <OfficeTab id="TabDefault">
-              <Group id="EmojiGroup">
+              <Group id="EmojiGroup1">
                 <Label resid="groupLabel" />
-                <Control xsi:type="Button" id="btnEmojiPicker">
+                <Control xsi:type="Button" id="btnEmojiPickerAppt">
+                  <Label resid="buttonLabel" />
+                  <Supertip>
+                    <Title resid="buttonLabel" />
+                    <Description resid="buttonTip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon16" />
+                    <bt:Image size="32" resid="icon32" />
+                    <bt:Image size="80" resid="icon80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="taskpaneUrl" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="EmojiGroup2">
+                <Label resid="groupLabel" />
+                <Control xsi:type="Button" id="btnEmojiPickerMsg">
                   <Label resid="buttonLabel" />
                   <Supertip>
                     <Title resid="buttonLabel" />
