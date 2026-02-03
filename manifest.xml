@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appshere/1.1" 
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
            xsi:type="MailApp">
-  <Id>5e8b4110-3333-4444-a716-44665544b000</Id>
-  <Version>1.0.0.0</Version>
+  <Id>5e8b4110-3333-4444-a716-44665544b001</Id>
+  <Version>1.0.0.1</Version>
   <ProviderName>Internal Tools</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Meeting Icons" />
