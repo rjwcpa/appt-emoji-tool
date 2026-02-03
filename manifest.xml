@@ -3,7 +3,7 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
            xsi:type="MailApp">
   <Id>a1b2c3d4-e5f6-4789-9abc-def012345678</Id>
-  <Version>1.0.0.17</Version>
+  <Version>1.0.0.18</Version>
   <ProviderName>Internal Tools</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Meeting Icons" />
