@@ -5,7 +5,8 @@
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
            xsi:type="MailApp">
   <Id>a1b2c3d4-e5f6-4789-9abc-def012345678</Id>
-  <Version>1.0.0.13</Version> <ProviderName>Internal Tools</ProviderName>
+  <Version>1.0.0.14</Version>
+  <ProviderName>Internal Tools</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Meeting Icons" />
   <Description DefaultValue="Add 🔐, 📧, or 📦 to your subject line." />
@@ -36,7 +37,7 @@
     <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit" />
   </Rule>
 
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Hosts>
       <Host xsi:type="MailHost">
         <DesktopFormFactor>
