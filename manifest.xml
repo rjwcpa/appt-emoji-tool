@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
-           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
            xsi:type="MailApp">
   <Id>a1b2c3d4-e5f6-4789-9abc-def012345678</Id>
-  <Version>1.0.0.16</Version>
+  <Version>1.0.0.17</Version>
   <ProviderName>Internal Tools</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Meeting Icons" />
   <Description DefaultValue="Add 🔐, 📧, or 📦 to your subject line." />
-  
-  <SupportUrl DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/" />
-  
   <Hosts>
     <Host Name="Mail" />
   </Hosts>
-
   <FormSettings>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
@@ -24,82 +18,8 @@
       </DesktopSettings>
     </Form>
   </FormSettings>
-
   <Permissions>ReadWriteItem</Permissions>
-
   <Rule xsi:type="RuleCollection" Mode="And">
     <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit" />
   </Rule>
-
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="VersionOverridesV1_0">
-    <Hosts>
-      <Host xsi:type="MailHost">
-        <DesktopFormFactor>
-          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="EmojiGroup1">
-                <Label resid="groupLabel" />
-                <Control xsi:type="Button" id="btnEmojiPickerAppt">
-                  <Label resid="buttonLabel" />
-                  <Supertip>
-                    <Title resid="buttonLabel" />
-                    <Description resid="buttonTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon16" />
-                    <bt:Image size="32" resid="icon32" />
-                    <bt:Image size="80" resid="icon80" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="taskpaneUrl" />
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-
-          <ExtensionPoint xsi:type="MessageReadCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="EmojiGroup2">
-                <Label resid="groupLabel" />
-                <Control xsi:type="Button" id="btnEmojiPickerMsg">
-                  <Label resid="buttonLabel" />
-                  <Supertip>
-                    <Title resid="buttonLabel" />
-                    <Description resid="buttonTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon16" />
-                    <bt:Image size="32" resid="icon32" />
-                    <bt:Image size="80" resid="icon80" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="taskpaneUrl" />
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-        </DesktopFormFactor>
-      </Host>
-    </Hosts>
-
-    <Resources>
-      <bt:Images>
-        <bt:Image id="icon16" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/icon16.png"/>
-        <bt:Image id="icon32" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/icon32.png"/>
-        <bt:Image id="icon80" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/icon80.png"/>
-      </bt:Images>
-      <bt:Urls>
-        <bt:Url id="taskpaneUrl" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/taskpane.html"/>
-      </bt:Urls>
-      <bt:ShortStrings>
-        <bt:String id="groupLabel" DefaultValue="Office Tools" />
-        <bt:String id="buttonLabel" DefaultValue="Insert Emoji" />
-      </bt:ShortStrings>
-      <bt:LongStrings>
-        <bt:String id="buttonTip" DefaultValue="Select 🔐, 📧, or 📦 to add to the subject line." />
-      </bt:LongStrings>
-    </Resources>
-  </VersionOverrides>
 </OfficeApp>
