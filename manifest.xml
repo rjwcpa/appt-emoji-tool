@@ -1,23 +1,26 @@
-<?xml version="1.0.0.6" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
            xsi:type="MailApp">
-  <Id>d2f16e4a-5555-4444-a716-44665544c33x</Id>
-  <Version>1.0.0.0</Version>
+  <Id>9d3c5221-1111-2222-b827-99887766a555</Id>
+  <Version>1.0.0.7</Version>
   <ProviderName>Internal Tools</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Meeting Icons" />
   <Description DefaultValue="Add 🔐, 📧, or 📦 to your subject line." />
+  
   <Hosts>
     <Host Name="Mail" />
   </Hosts>
+
   <Requirements>
     <Sets>
       <Set Name="Mailbox" MinVersion="1.1" />
     </Sets>
   </Requirements>
+
   <FormSettings>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
@@ -25,7 +28,9 @@
       </DesktopSettings>
     </Form>
   </FormSettings>
+
   <Permissions>ReadWriteItem</Permissions>
+
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
       <Host xsi:type="MailHost">
@@ -65,7 +70,7 @@
         <bt:Url id="taskpaneUrl" DefaultValue="https://rjwcpa.github.io/appt-emoji-tool/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="groupLabel" DefaultValue="Custom Tools" />
+        <bt:String id="groupLabel" DefaultValue="Office Tools" />
         <bt:String id="buttonLabel" DefaultValue="Insert Emoji" />
       </bt:ShortStrings>
       <bt:LongStrings>
